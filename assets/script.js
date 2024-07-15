@@ -10,10 +10,12 @@ const btnContainer = document.getElementById('buttons')
 
 function getData(){
     let city = searchInput.value.trim();
-    const apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${API}`;
+    const apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${API}&units=imperial`;
+
     fetch(apiUrl)
     .then(function (response) {
         return response.json();
+
 
 }) 
 .then(function (data) {
@@ -74,6 +76,7 @@ const cityName = target.textContent;
 renderCurrentWeather(cityName);
 
     }
+
 
 
 
